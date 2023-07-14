@@ -1,7 +1,7 @@
 package com.goncharov.evgeny.tetris.screens
 
-import com.goncharov.evgeny.tetris.base.BaseScreen
+import com.badlogic.gdx.ScreenAdapter
 
-class StartScreen : BaseScreen() {
+class StartScreen : ScreenAdapter() {
 
 }
