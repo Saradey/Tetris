@@ -4,13 +4,13 @@ import android.os.Bundle
 
 import com.badlogic.gdx.backends.android.AndroidApplication
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
-import com.goncharov.evgeny.tetris.Tetris
+import com.goncharov.evgeny.tetris.CoreApp
 
 /** Launches the Android application. */
 class AndroidLauncher : AndroidApplication() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initialize(Tetris(), AndroidApplicationConfiguration().apply {
+        initialize(CoreApp(), AndroidApplicationConfiguration().apply {
             // Configure your application here.
             useImmersiveMode = true // Recommended, but not required.
         })

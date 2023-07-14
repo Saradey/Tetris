@@ -7,12 +7,12 @@ import org.robovm.apple.uikit.UIApplication
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration
-import com.goncharov.evgeny.tetris.Tetris
+import com.goncharov.evgeny.tetris.CoreApp
 
 /** Launches the iOS (RoboVM) application. */
 class IOSLauncher : IOSApplication.Delegate() {
     override fun createApplication(): IOSApplication {
-        return IOSApplication(Tetris(), IOSApplicationConfiguration().apply {
+        return IOSApplication(CoreApp(), IOSApplicationConfiguration().apply {
             // Configure your application here.
         })
     }
