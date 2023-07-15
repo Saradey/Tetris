@@ -1,0 +1,131 @@
+{
+com.badlogic.gdx.graphics.g2d.BitmapFont: {
+	game_blue_font_40: {
+		file: 12_Wide awake Black(3).fnt
+		scaledSize: -1
+		markupEnabled: false
+		flip: false
+	}
+	game_info_font_30: {
+		file: 12_Wide awake Black(1).fnt
+		scaledSize: -1
+		markupEnabled: false
+		flip: false
+	}
+	game_over_font_40: {
+		file: 12_Wide awake Black(4).fnt
+		scaledSize: -1
+		markupEnabled: false
+		flip: false
+	}
+	menu_font_30: {
+		file: 12_Wide awake Black.fnt
+		scaledSize: -1
+		markupEnabled: false
+		flip: false
+	}
+	score_font_30: {
+		file: 12_Wide awake Black(2).fnt
+		scaledSize: -1
+		markupEnabled: false
+		flip: false
+	}
+}
+com.badlogic.gdx.graphics.Color: {
+	black_color: {
+		r: 0
+		g: 0
+		b: 0
+		a: 1
+	}
+	game_background_color: {
+		r: 0.74509805
+		g: 0.8117647
+		b: 0.91764706
+		a: 0.6179775
+	}
+	game_over_background_color: {
+		r: 0.5764706
+		g: 0.6431373
+		b: 0.76862746
+		a: 1
+	}
+	menu_color: {
+		r: 0.46666667
+		g: 0.53333336
+		b: 0.6666667
+		a: 1
+	}
+	white_color: {
+		r: 1
+		g: 1
+		b: 1
+		a: 1
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
+	ui_arrow_focused: {
+		name: ui_arrow
+		color: {
+			r: 0
+			g: 0
+			b: 0
+			a: 1
+		}
+	}
+	ui_arrow_disabled: {
+		name: ui_arrow
+		color: {
+			r: 1
+			g: 1
+			b: 1
+			a: 0.5674157
+		}
+	}
+	placeholder_button_drawable: {
+		name: white-pixel
+		color: menu_color
+		minWidth: 12
+		minHeight: 12
+	}
+	placeholder_button_click: {
+		name: white-pixel
+		color: black_color
+		minWidth: 12
+		minHeight: 12
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
+	default: {
+		up: ui_arrow
+		over: ui_arrow_focused
+		disabled: ui_arrow_disabled
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton$ImageTextButtonStyle: {
+	default: {
+		imageUp: placeholder_button_drawable
+		imageOver: placeholder_button_click
+		font: menu_font_30
+		overFontColor: black_color
+		pressedOffsetY: 1
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+	menu_label: {
+		font: menu_font_30
+	}
+	score_label: {
+		font: game_info_font_30
+	}
+	score_result_label: {
+		font: score_font_30
+	}
+	game_state_label: {
+		font: game_blue_font_40
+	}
+	game_over_label: {
+		font: game_over_font_40
+	}
+}
+}
