@@ -2,16 +2,18 @@ package com.goncharov.evgeny.tetris.screens.start
 
 import com.badlogic.gdx.ScreenAdapter
 import com.badlogic.gdx.utils.viewport.FitViewport
-import com.goncharov.evgeny.tetris.service.locator.qualifiers.UiViewPort
-import org.koin.core.component.KoinComponent
+import org.koin.core.component.KoinScopeComponent
+import org.koin.core.component.createScope
 import org.koin.core.component.inject
+import org.koin.core.scope.Scope
 
-class StartScreen : ScreenAdapter(), KoinComponent {
+class StartScreen : ScreenAdapter(), KoinScopeComponent {
 
+    override val scope: Scope = createScope()
     private val uiViewPort: FitViewport by inject()
 
     override fun show() {
-        uiViewPort
+
     }
 
     override fun render(delta: Float) {
@@ -27,6 +29,8 @@ class StartScreen : ScreenAdapter(), KoinComponent {
     }
 
     override fun dispose() {
-
+        if (scope.isNotClosed()) {
+            scope.close()
+        }
     }
 }
