@@ -2,12 +2,12 @@ package com.goncharov.evgeny.tetris.screens
 
 import com.badlogic.gdx.ScreenAdapter
 import com.badlogic.gdx.utils.viewport.FitViewport
-import com.goncharov.evgeny.tetris.service.locator.qualifiers.UiViewPort
-import org.koin.java.KoinJavaComponent.get
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class StartScreen : ScreenAdapter() {
+class StartScreen : ScreenAdapter(), KoinComponent {
 
-    private val uiViewPort: FitViewport  = get(FitViewport::class.java, UiViewPort)
+    private val uiViewPort: FitViewport by inject()
 
     override fun show() {
 
