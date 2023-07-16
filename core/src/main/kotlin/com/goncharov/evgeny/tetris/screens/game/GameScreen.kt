@@ -1,8 +1,8 @@
-package com.goncharov.evgeny.tetris.screens
+package com.goncharov.evgeny.tetris.screens.game
 
 import com.badlogic.gdx.ScreenAdapter
 
-class DifficultyScreen : ScreenAdapter() {
+class GameScreen : ScreenAdapter() {
 
     override fun show() {
 
