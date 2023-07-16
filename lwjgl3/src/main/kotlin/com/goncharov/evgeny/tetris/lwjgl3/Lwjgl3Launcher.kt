@@ -14,6 +14,7 @@ fun main() {
     if (StartupHelper.startNewJvmIfRequired())
       return
     Lwjgl3Application(CoreApp(), Lwjgl3ApplicationConfiguration().apply {
+        setResizable(false)
         setTitle("Tetris")
         setWindowedMode(WINDOW_DESKTOP_WIDTH_SIZE, WINDOW_DESKTOP_HEIGHT_SIZE)
         setWindowIcon(*(arrayOf(128, 64, 32, 16).map { "libgdx$it.png" }.toTypedArray()))
