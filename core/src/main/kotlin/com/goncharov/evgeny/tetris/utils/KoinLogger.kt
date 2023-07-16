@@ -7,6 +7,6 @@ import org.koin.core.logger.MESSAGE
 class KoinLogger : Logger(){
 
     override fun display(level: Level, msg: MESSAGE) {
-        TODO("Not yet implemented")
+        //TODO
     }
 }

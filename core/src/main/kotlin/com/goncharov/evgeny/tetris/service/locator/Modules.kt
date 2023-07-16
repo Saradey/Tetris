@@ -19,3 +19,7 @@ val gdxDependencyModule: Module = module {
         qualifier = UiViewPort
     }
 }
+
+val modules = listOf(
+    gdxDependencyModule
+)

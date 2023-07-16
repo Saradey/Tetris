@@ -1,11 +1,13 @@
 package com.goncharov.evgeny.tetris.screens
 
 import com.badlogic.gdx.ScreenAdapter
-import com.badlogic.gdx.utils.viewport.FillViewport
-import com.goncharov.evgeny.tetris.utils.UI_HUD_HEIGHT_SIZE
-import com.goncharov.evgeny.tetris.utils.UI_HUD_WIDTH_SIZE
+import com.badlogic.gdx.utils.viewport.FitViewport
+import com.goncharov.evgeny.tetris.service.locator.qualifiers.UiViewPort
+import org.koin.java.KoinJavaComponent.get
 
 class StartScreen : ScreenAdapter() {
+
+    private val uiViewPort: FitViewport  = get(FitViewport::class.java, UiViewPort)
 
     override fun show() {
 
