@@ -7,8 +7,6 @@ import com.goncharov.evgeny.tetris.utils.UI_HUD_WIDTH_SIZE
 
 class StartScreen : ScreenAdapter() {
 
-    private val uiViewport = FillViewport(UI_HUD_WIDTH_SIZE, UI_HUD_HEIGHT_SIZE)
-
     override fun show() {
 
     }
