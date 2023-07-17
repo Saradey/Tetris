@@ -18,16 +18,15 @@ class StartScreen : ScreenAdapter(), KoinScopeComponent {
 
     override fun show() {
         resourceManager.loadedAllResources()
-        uiViewPort
-        startScene
     }
 
     override fun render(delta: Float) {
-
+        startScene.act()
+        startScene.draw()
     }
 
     override fun resize(width: Int, height: Int) {
-
+        uiViewPort.update(width, height, true)
     }
 
     override fun hide() {
@@ -35,6 +34,7 @@ class StartScreen : ScreenAdapter(), KoinScopeComponent {
     }
 
     override fun dispose() {
+        startScene.dispose()
         if (scope.isNotClosed()) {
             scope.close()
         }
