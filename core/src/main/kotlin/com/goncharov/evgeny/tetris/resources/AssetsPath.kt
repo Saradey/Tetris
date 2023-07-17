@@ -1,4 +1,4 @@
-package com.goncharov.evgeny.tetris.utils
+package com.goncharov.evgeny.tetris.resources
 
 //sprites
 const val GAME_ASSET_PATH = "texture_atlas/tetris_spite_sheet.atlas"
