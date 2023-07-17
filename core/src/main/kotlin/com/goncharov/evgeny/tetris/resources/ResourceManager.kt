@@ -1,5 +1,6 @@
 package com.goncharov.evgeny.tetris.resources
 
+import com.badlogic.gdx.assets.AssetDescriptor
 import com.badlogic.gdx.assets.AssetManager
 
 class ResourceManager(
@@ -15,5 +16,9 @@ class ResourceManager(
         assetManager.load(SOUND_GAME_OVER_DESCRIPTOR)
         assetManager.load(SOUND_TERN_FIGURE_DESCRIPTOR)
         assetManager.finishLoading()
+    }
+
+    operator fun <T> get(assetDescriptor: AssetDescriptor<T>): T {
+        return assetManager[assetDescriptor]
     }
 }
