@@ -44,6 +44,12 @@ com.badlogic.gdx.graphics.Color: {
 		b: 0.91764706
 		a: 0.6179775
 	}
+	game_background_color_2: {
+		r: 0.8666667
+		g: 0.93333334
+		b: 1
+		a: 1
+	}
 	game_over_background_color: {
 		r: 0.5764706
 		g: 0.6431373
@@ -112,6 +118,9 @@ com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton$ImageTextButtonStyle: {
 	}
 }
 com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+	default: {
+		font: menu_font_30
+	}
 	menu_label: {
 		font: menu_font_30
 	}
@@ -126,6 +135,11 @@ com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 	}
 	game_over_label: {
 		font: game_over_font_40
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
+	default: {
+		label: default
 	}
 }
 }

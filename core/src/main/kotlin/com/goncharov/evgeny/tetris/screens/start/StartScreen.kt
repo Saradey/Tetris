@@ -4,6 +4,7 @@ import com.badlogic.gdx.ScreenAdapter
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.goncharov.evgeny.tetris.resources.ResourceManager
 import com.goncharov.evgeny.tetris.screens.start.ui.StartScene
+import com.goncharov.evgeny.tetris.utils.clearScreen
 import org.koin.core.component.KoinScopeComponent
 import org.koin.core.component.createScope
 import org.koin.core.component.inject
@@ -21,6 +22,7 @@ class StartScreen : ScreenAdapter(), KoinScopeComponent {
     }
 
     override fun render(delta: Float) {
+        clearScreen()
         startScene.act()
         startScene.draw()
     }
