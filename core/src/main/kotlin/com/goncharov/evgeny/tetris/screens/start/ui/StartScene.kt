@@ -15,6 +15,7 @@ import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
 import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
 import com.goncharov.evgeny.tetris.ui.MainBackground
+import com.goncharov.evgeny.tetris.utils.addListenerKtx
 
 class StartScene(
     viewport: Viewport,
@@ -37,8 +38,13 @@ class StartScene(
         val image = Image(uiSkin, TITLE_UI_PATH)
         root.add(image).expandX().row()
         val playButton = ImageTextButton(PLAY_GAME_TEXT, uiSkin)
+        playButton.addListenerKtx(::clickPlayButton)
         root.add(playButton).expandX().padTop(44.0f)
         addActor(root)
+    }
+
+    private fun clickPlayButton() {
+        soundClickButton.play()
     }
 
     private fun initAction() {
