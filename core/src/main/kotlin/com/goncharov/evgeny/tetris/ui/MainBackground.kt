@@ -1,0 +1,14 @@
+package com.goncharov.evgeny.tetris.ui
+
+import com.badlogic.gdx.graphics.g2d.Batch
+import com.badlogic.gdx.graphics.g2d.Sprite
+import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable
+
+class MainBackground(
+    private val sprite: Sprite
+) : SpriteDrawable(sprite) {
+
+    override fun draw(batch: Batch?, x: Float, y: Float, width: Float, height: Float) {
+
+    }
+}
