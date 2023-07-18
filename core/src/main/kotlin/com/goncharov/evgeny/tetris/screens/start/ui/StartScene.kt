@@ -3,12 +3,16 @@ package com.goncharov.evgeny.tetris.screens.start.ui
 import com.badlogic.gdx.audio.Sound
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Stage
+import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.Viewport
-import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE
+import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE_UI_PATH
+import com.goncharov.evgeny.tetris.resources.PLAY_GAME_TEXT
 import com.goncharov.evgeny.tetris.resources.ResourceManager
 import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
+import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
 import com.goncharov.evgeny.tetris.ui.MainBackground
 
@@ -29,7 +33,11 @@ class StartScene(
     private fun initUi() {
         val root = Table()
         root.setFillParent(true)
-        root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE)))
+        root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
+        val image = Image(uiSkin, TITLE_UI_PATH)
+        root.add(image).expandX().row()
+        val playButton = ImageTextButton(PLAY_GAME_TEXT, uiSkin)
+        root.add(playButton).expandX().padTop(44.0f)
         addActor(root)
     }
 
