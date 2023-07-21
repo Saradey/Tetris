@@ -40,7 +40,7 @@ class StartScene(
         root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
         root.add(title).expandX().row()
         playButton.addListenerKtx(::clickPlayButton)
-        root.add(playButton).expandX().padTop(44.0f)
+        root.add(playButton).expandX().padTop(PLAY_BUTTON_TOP_PADDING)
         addActor(root)
     }
 
@@ -50,5 +50,9 @@ class StartScene(
 
     private fun initAction() {
 
+    }
+
+    private companion object {
+        const val PLAY_BUTTON_TOP_PADDING = 80f
     }
 }
