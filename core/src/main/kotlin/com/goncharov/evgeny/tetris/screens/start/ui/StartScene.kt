@@ -26,18 +26,19 @@ class StartScene(
     private val uiSkin: Skin = resourceManager[UI_ASSET_DESCRIPTOR]
     private val soundClickButton: Sound = resourceManager[SOUND_CLICK_BUTTON_DESCRIPTOR]
 
+    private val root = Table()
+    private val title = Image(uiSkin, TITLE_UI_PATH)
+    private val playButton = ImageTextButton(PLAY_GAME_TEXT, uiSkin)
+
     init {
         initUi()
         initAction()
     }
 
     private fun initUi() {
-        val root = Table()
         root.setFillParent(true)
         root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
-        val image = Image(uiSkin, TITLE_UI_PATH)
-        root.add(image).expandX().row()
-        val playButton = ImageTextButton(PLAY_GAME_TEXT, uiSkin)
+        root.add(title).expandX().row()
         playButton.addListenerKtx(::clickPlayButton)
         root.add(playButton).expandX().padTop(44.0f)
         addActor(root)
