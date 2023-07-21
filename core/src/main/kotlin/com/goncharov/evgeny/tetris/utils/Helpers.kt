@@ -15,7 +15,7 @@ fun clearScreen() {
 }
 
 inline fun Actor.addListenerKtx(crossinline action: () -> Unit) {
-    this.addListener(object : ClickListener() {
+    addListener(object : ClickListener() {
         override fun clicked(event: InputEvent?, x: Float, y: Float) {
             action()
         }

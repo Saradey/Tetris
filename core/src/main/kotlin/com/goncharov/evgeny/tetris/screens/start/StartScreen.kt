@@ -1,5 +1,6 @@
 package com.goncharov.evgeny.tetris.screens.start
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.ScreenAdapter
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.goncharov.evgeny.tetris.resources.ResourceManager
@@ -19,6 +20,7 @@ class StartScreen : ScreenAdapter(), KoinScopeComponent {
 
     override fun show() {
         resourceManager.loadedAllResources()
+        Gdx.input.inputProcessor = startScene
     }
 
     override fun render(delta: Float) {
@@ -36,6 +38,7 @@ class StartScreen : ScreenAdapter(), KoinScopeComponent {
     }
 
     override fun dispose() {
+        Gdx.input.inputProcessor = null
         startScene.dispose()
         if (scope.isNotClosed()) {
             scope.close()
