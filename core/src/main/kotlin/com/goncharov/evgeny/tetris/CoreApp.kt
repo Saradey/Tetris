@@ -7,6 +7,7 @@ import com.goncharov.evgeny.tetris.screens.start.StartScreen
 import com.goncharov.evgeny.tetris.utils.KoinLogger
 import org.koin.core.context.startKoin
 import com.goncharov.evgeny.tetris.service.locator.allModules
+import com.goncharov.evgeny.tetris.service.locator.createCoreModule
 
 class CoreApp : Game(), Navigator {
 
@@ -22,7 +23,11 @@ class CoreApp : Game(), Navigator {
     private fun initKoin() {
         startKoin {
             logger(KoinLogger())
-            modules(allModules)
+            modules(
+                allModules.plus(
+                    createCoreModule(this@CoreApp)
+                ),
+            )
         }
     }
 }
