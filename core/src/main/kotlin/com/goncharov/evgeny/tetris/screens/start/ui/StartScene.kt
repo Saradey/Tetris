@@ -12,6 +12,7 @@ import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.PLAY_GAME_TEXT
 import com.goncharov.evgeny.tetris.resources.ResourceManager
 import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
+import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_PATH
 import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
 import com.goncharov.evgeny.tetris.ui.MainBackground
@@ -29,6 +30,7 @@ class StartScene(
     private val root = Table()
     private val title = Image(uiSkin, TITLE_UI_PATH)
     private val playButton = ImageTextButton(PLAY_GAME_TEXT, uiSkin)
+    private val titleDot = Image(uiSkin, TITLE_SHAPE_PATH)
 
     init {
         initUi()
@@ -38,6 +40,7 @@ class StartScene(
     private fun initUi() {
         root.setFillParent(true)
         root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
+        root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).padBottom(-12f).row()
         root.add(title).expandX().row()
         playButton.addListenerKtx(::clickPlayButton)
         root.add(playButton).expandX().padTop(PLAY_BUTTON_TOP_PADDING)
@@ -54,5 +57,6 @@ class StartScene(
 
     private companion object {
         const val PLAY_BUTTON_TOP_PADDING = 80f
+        const val LEFT_MARGIN_TITLE_DOT = 84f
     }
 }
