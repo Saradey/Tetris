@@ -3,6 +3,7 @@ package com.goncharov.evgeny.tetris.screens.start.ui
 import com.badlogic.gdx.audio.Sound
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Stage
+import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
@@ -52,11 +53,18 @@ class StartScene(
     }
 
     private fun initAction() {
-
+        title.addAction(
+            Actions.sequence(
+                Actions.alpha(TITLE_ALPHA_START),
+                Actions.fadeIn(ANIMATION_START_DURATION)
+            )
+        )
     }
 
     private companion object {
         const val PLAY_BUTTON_TOP_PADDING = 80f
         const val LEFT_MARGIN_TITLE_DOT = 84f
+        const val TITLE_ALPHA_START = 0f
+        const val ANIMATION_START_DURATION = 0.3f
     }
 }
