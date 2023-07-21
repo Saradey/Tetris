@@ -40,7 +40,7 @@ class StartScene(
     private fun initUi() {
         root.setFillParent(true)
         root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
-        root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).padBottom(-12f).row()
+        root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).row()
         root.add(title).expandX().row()
         playButton.addListenerKtx(::clickPlayButton)
         root.add(playButton).expandX().padTop(PLAY_BUTTON_TOP_PADDING)
