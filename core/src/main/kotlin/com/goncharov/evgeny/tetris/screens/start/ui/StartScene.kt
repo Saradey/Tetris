@@ -9,6 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.Viewport
+import com.goncharov.evgeny.tetris.navigation.NavigationKey
+import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.PLAY_GAME_TEXT
 import com.goncharov.evgeny.tetris.resources.ResourceManager
@@ -22,7 +24,8 @@ import com.goncharov.evgeny.tetris.utils.addListenerKtx
 class StartScene(
     viewport: Viewport,
     spriteBatch: SpriteBatch,
-    resourceManager: ResourceManager
+    resourceManager: ResourceManager,
+    private val navigator: Navigator
 ) : Stage(viewport, spriteBatch) {
 
     private val uiSkin: Skin = resourceManager[UI_ASSET_DESCRIPTOR]
@@ -50,6 +53,7 @@ class StartScene(
 
     private fun clickPlayButton() {
         soundClickButton.play()
+        navigator.navigation(NavigationKey.DifficultyScreenKey)
     }
 
     private fun initAction() {

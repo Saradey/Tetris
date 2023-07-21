@@ -13,6 +13,6 @@ import org.koin.dsl.module
 val startModule: Module = module {
     scope(TypeQualifier(StartScreen::class)) {
         scoped { createViewPort(UI_HUD_WIDTH_SIZE, UI_HUD_HEIGHT_SIZE) } bind Viewport::class
-        factory { createStartScene(get(), get(), get()) }
+        factory { createStartScene(get(), get(), get(), get()) }
     }
 }
