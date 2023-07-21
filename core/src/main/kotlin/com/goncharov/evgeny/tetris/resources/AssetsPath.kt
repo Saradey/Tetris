@@ -2,7 +2,7 @@ package com.goncharov.evgeny.tetris.resources
 
 //sprites
 const val GAME_ASSET_PATH = "texture_atlas/tetris_spite_sheet.atlas"
-const val UI_ASSET_PATH = "ui/Untitled.json"
+const val UI_ASSET_PATH = "ui/tetris_uikit.json"
 
 //sound
 const val SOUND_CLEAR_LINE_PATH = "sound/sound_clear_line.mp3"
