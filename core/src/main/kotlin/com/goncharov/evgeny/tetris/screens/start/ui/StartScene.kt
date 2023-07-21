@@ -55,8 +55,15 @@ class StartScene(
     private fun initAction() {
         title.addAction(
             Actions.sequence(
-                Actions.alpha(TITLE_ALPHA_START),
+                Actions.alpha(ANIMATION_ALPHA_START),
                 Actions.fadeIn(ANIMATION_START_DURATION)
+            )
+        )
+        titleDot.addAction(
+            Actions.parallel(
+                Actions.alpha(ANIMATION_ALPHA_START),
+                Actions.fadeIn(ANIMATION_START_DURATION),
+                Actions.moveBy(0f, MOVE_TITLE_DOT_POSITION, ANIMATION_START_DURATION)
             )
         )
     }
@@ -64,7 +71,8 @@ class StartScene(
     private companion object {
         const val PLAY_BUTTON_TOP_PADDING = 80f
         const val LEFT_MARGIN_TITLE_DOT = 84f
-        const val TITLE_ALPHA_START = 0f
+        const val ANIMATION_ALPHA_START = 0f
         const val ANIMATION_START_DURATION = 0.3f
+        const val MOVE_TITLE_DOT_POSITION = -20f
     }
 }
