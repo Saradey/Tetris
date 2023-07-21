@@ -1,0 +1,40 @@
+info face="menu_font_30" size=12 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=2 padding=1,1,1,1 spacing=0,0
+common lineHeight=34 base=26 scaleW=503 scaleH=52 pages=1 packed=0 alphaChnl=0 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="menu_font_30.png"
+chars count=35
+char id=0     x=2    y=2    width=13   height=21   xoffset=-1   yoffset=5    xadvance=15   page=0    chnl=0
+char id=32    x=0    y=0    width=0    height=0    xoffset=-1   yoffset=-1   xadvance=15   page=0    chnl=0
+char id=44    x=26   y=29   width=6    height=8    xoffset=0    yoffset=20   xadvance=6    page=0    chnl=0
+char id=46    x=34   y=29   width=6    height=5    xoffset=0    yoffset=19   xadvance=6    page=0    chnl=0
+char id=48    x=487  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=49    x=340  y=2    width=9    height=22   xoffset=0    yoffset=2    xadvance=6    page=0    chnl=0
+char id=50    x=351  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=51    x=368  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=52    x=385  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=53    x=402  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=54    x=419  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=55    x=436  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=56    x=453  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=57    x=470  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=58    x=17   y=29   width=7    height=11   xoffset=0    yoffset=13   xadvance=6    page=0    chnl=0
+char id=63    x=0    y=29   width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=97    x=164  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=99    x=181  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=100   x=17   y=2    width=16   height=25   xoffset=0    yoffset=-1   xadvance=13   page=0    chnl=0
+char id=101   x=198  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=103   x=35   y=2    width=16   height=25   xoffset=-1   yoffset=2    xadvance=13   page=0    chnl=0
+char id=105   x=53   y=2    width=10   height=25   xoffset=0    yoffset=-1   xadvance=6    page=0    chnl=0
+char id=107   x=65   y=2    width=15   height=25   xoffset=0    yoffset=-1   xadvance=13   page=0    chnl=0
+char id=108   x=82   y=2    width=10   height=25   xoffset=0    yoffset=-1   xadvance=6    page=0    chnl=0
+char id=109   x=215  y=2    width=22   height=22   xoffset=0    yoffset=2    xadvance=19   page=0    chnl=0
+char id=110   x=239  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=111   x=256  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=112   x=94   y=2    width=16   height=25   xoffset=-1   yoffset=2    xadvance=13   page=0    chnl=0
+char id=113   x=112  y=2    width=15   height=25   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=114   x=273  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=115   x=290  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=116   x=129  y=2    width=15   height=25   xoffset=0    yoffset=-1   xadvance=13   page=0    chnl=0
+char id=117   x=307  y=2    width=15   height=22   xoffset=0    yoffset=2    xadvance=13   page=0    chnl=0
+char id=118   x=324  y=2    width=14   height=22   xoffset=1    yoffset=2    xadvance=13   page=0    chnl=0
+char id=121   x=146  y=2    width=16   height=25   xoffset=-1   yoffset=2    xadvance=13   page=0    chnl=0
+kernings count=0

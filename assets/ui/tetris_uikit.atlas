@@ -1,0 +1,90 @@
+
+tetris_uikit.png
+size: 1024, 1024
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+game_blue_font_40
+  rotate: false
+  xy: 1, 97
+  size: 497, 71
+  orig: 497, 71
+  offset: 0, 0
+  index: -1
+game_info_font_30
+  rotate: false
+  xy: 1, 278
+  size: 503, 60
+  orig: 503, 60
+  offset: 0, 0
+  index: -1
+game_over_font_40
+  rotate: false
+  xy: 1, 24
+  size: 497, 71
+  orig: 497, 71
+  offset: 0, 0
+  index: -1
+menu_font_30
+  rotate: false
+  xy: 1, 224
+  size: 503, 52
+  orig: 503, 52
+  offset: 0, 0
+  index: -1
+score_font_30
+  rotate: false
+  xy: 1, 170
+  size: 503, 52
+  orig: 503, 52
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 1, 340
+  size: 601, 601
+  orig: 601, 601
+  offset: 0, 0
+  index: -1
+button_drawable
+  rotate: false
+  xy: 765, 929
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+button_focused_drawable
+  rotate: false
+  xy: 506, 305
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+title
+  rotate: false
+  xy: 604, 876
+  size: 159, 65
+  orig: 159, 65
+  offset: 0, 0
+  index: -1
+title_shape
+  rotate: false
+  xy: 506, 319
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+ui_arrow
+  rotate: false
+  xy: 1, 1
+  size: 17, 21
+  orig: 17, 21
+  offset: 0, 0
+  index: -1
+ui_arrow_disabled
+  rotate: false
+  xy: 604, 853
+  size: 17, 21
+  orig: 17, 21
+  offset: 0, 0
+  index: -1
