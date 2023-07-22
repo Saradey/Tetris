@@ -4,12 +4,14 @@ import com.badlogic.gdx.audio.Sound
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.ui.Image
+import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.goncharov.evgeny.tetris.custom.actors.MainBackground
 import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE_UI_PATH
+import com.goncharov.evgeny.tetris.resources.DIFFICULTY_INFO_TEXT
 import com.goncharov.evgeny.tetris.resources.ResourceManager
 import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
 import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_PATH
@@ -29,6 +31,7 @@ class DifficultyScene(
     private val root = Table()
     private val titleDot = Image(uiSkin, TITLE_SHAPE_PATH)
     private val title = Image(uiSkin, TITLE_UI_PATH)
+    private val difficultyInfoLabel = Label(DIFFICULTY_INFO_TEXT, uiSkin)
 
     init {
         initUi()
@@ -39,6 +42,7 @@ class DifficultyScene(
         root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
         root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).padBottom(MOVE_TITLE_DOT_POSITION).row()
         root.add(title).expandX().row()
+        root.add(difficultyInfoLabel).expandX().row()
         addActor(root)
     }
 
