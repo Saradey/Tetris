@@ -13,5 +13,6 @@ import org.koin.dsl.module
 val gameModule: Module = module {
     scope(TypeQualifier(GameScreen::class)) {
         scoped { createViewPort(UI_HUD_WIDTH_SIZE, UI_HUD_HEIGHT_SIZE) } bind Viewport::class
+        factory { createGameScene(get(), get(), get(), get()) }
     }
 }
