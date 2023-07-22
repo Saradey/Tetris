@@ -23,15 +23,14 @@ import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_PATH
 import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
 import com.goncharov.evgeny.tetris.utils.addListenerKtx
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
 
 class DifficultyScene(
     viewport: Viewport,
     spriteBatch: SpriteBatch,
     resourceManager: ResourceManager,
-    private val navigator: Navigator
-) : Stage(viewport, spriteBatch), KoinComponent {
+    private val navigator: Navigator,
+    private val difficultyRepository: DifficultyRepository
+) : Stage(viewport, spriteBatch) {
 
     private val uiSkin: Skin = resourceManager[UI_ASSET_DESCRIPTOR]
     private val soundClickButton: Sound = resourceManager[SOUND_CLICK_BUTTON_DESCRIPTOR]
@@ -41,7 +40,6 @@ class DifficultyScene(
     private val difficultyInfoLabel = Label(DIFFICULTY_INFO_TEXT, uiSkin)
     private val difficultyLevelActor = DifficultyLevelActor(uiSkin)
     private val gameStartTextButton = ImageTextButton(OK_TEXT, uiSkin)
-    private val difficultyRepository: DifficultyRepository by inject()
 
     init {
         initUi()

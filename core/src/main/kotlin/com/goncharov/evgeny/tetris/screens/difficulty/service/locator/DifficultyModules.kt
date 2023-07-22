@@ -13,6 +13,6 @@ import org.koin.dsl.module
 val difficultyModule: Module = module {
     scope(TypeQualifier(DifficultyScreen::class)) {
         scoped { createViewPort(UI_HUD_WIDTH_SIZE, UI_HUD_HEIGHT_SIZE) } bind Viewport::class
-        factory { createDifficultyScene(get(), get(), get(), get()) }
+        factory { createDifficultyScene(get(), get(), get(), get(), get()) }
     }
 }
