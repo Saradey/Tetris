@@ -48,9 +48,9 @@ class DifficultyScene(
         root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
         root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).padBottom(MOVE_TITLE_DOT_POSITION).row()
         root.add(title).expandX().row()
-        root.add(difficultyInfoLabel).expandX().row()
-        root.add(difficultyLevelActor).expandX().row()
-        root.add(gameStartTextButton).expandX().row()
+        root.add(difficultyInfoLabel).padTop(PADDING_TOP_INFO_LABEL).expandX().row()
+        root.add(difficultyLevelActor).padTop(PADDING_TOP_DIFFICULTY_LEVEL).expandX().row()
+        root.add(gameStartTextButton).padTop(PADDING_TOP_START_BUTTON).expandX().row()
         addActor(root)
     }
 
@@ -63,5 +63,8 @@ class DifficultyScene(
     private companion object {
         const val LEFT_MARGIN_TITLE_DOT = 84f
         const val MOVE_TITLE_DOT_POSITION = -20f
+        const val PADDING_TOP_INFO_LABEL = 36f
+        const val PADDING_TOP_DIFFICULTY_LEVEL = 14f
+        const val PADDING_TOP_START_BUTTON = 24f
     }
 }
