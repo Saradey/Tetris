@@ -37,5 +37,6 @@ val repositoriesModule: Module = module {
 val allModules = listOf(
     gdxDependencyModule,
     startModule,
-    difficultyModule
+    difficultyModule,
+    repositoriesModule
 )

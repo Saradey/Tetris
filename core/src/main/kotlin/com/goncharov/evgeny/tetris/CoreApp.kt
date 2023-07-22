@@ -30,9 +30,7 @@ class CoreApp : Game(), Navigator {
         startKoin {
             logger(KoinLogger())
             modules(
-                allModules.plus(
-                    createCoreModule(this@CoreApp)
-                ),
+                allModules.plus(createCoreModule(this@CoreApp))
             )
         }
     }
