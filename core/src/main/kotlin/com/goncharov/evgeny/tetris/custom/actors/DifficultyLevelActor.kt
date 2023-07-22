@@ -4,7 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
-import com.goncharov.evgeny.tetris.resources.START_DIFFICULTY_LVL
+import com.goncharov.evgeny.tetris.resources.START_DIFFICULTY_LVL_TEXT
 
 class DifficultyLevelActor(
     uiSkin: Skin
@@ -15,7 +15,7 @@ class DifficultyLevelActor(
         rotation = 90f
         isDisabled = false
     }
-    private val lvlDifficultyLabel = Label(START_DIFFICULTY_LVL, uiSkin)
+    private val lvlDifficultyLabel = Label(START_DIFFICULTY_LVL_TEXT, uiSkin)
 
     init {
         initUi()
