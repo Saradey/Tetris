@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.goncharov.evgeny.tetris.custom.actors.DifficultyLevelActor
 import com.goncharov.evgeny.tetris.custom.actors.MainBackground
+import com.goncharov.evgeny.tetris.navigation.NavigationKey
 import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.repositories.DifficultyRepository
 import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE_UI_PATH
@@ -21,7 +22,7 @@ import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
 import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_PATH
 import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
-import com.goncharov.evgeny.tetris.screens.start.ui.StartScene
+import com.goncharov.evgeny.tetris.utils.addListenerKtx
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -44,7 +45,7 @@ class DifficultyScene(
 
     init {
         initUi()
-        initDifficultyLevelListener()
+        initListeners()
     }
 
     private fun initUi() {
@@ -58,11 +59,17 @@ class DifficultyScene(
         addActor(root)
     }
 
-    private fun initDifficultyLevelListener() {
+    private fun initListeners() {
         difficultyLevelActor.initListenerDifficultyLevel { difficultyLevel ->
             soundClickButton.play()
             difficultyRepository.setDifficultyLvl(difficultyLevel)
         }
+        gameStartTextButton.addListenerKtx(::clickStartGame)
+    }
+
+    private fun clickStartGame() {
+        soundClickButton.play()
+        navigator.navigation(NavigationKey.GameScreenKey)
     }
 
     private companion object {
