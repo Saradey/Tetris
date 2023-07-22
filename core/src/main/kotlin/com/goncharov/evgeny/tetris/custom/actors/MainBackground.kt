@@ -9,9 +9,15 @@ class MainBackground(
 ) : SpriteDrawable(sprite) {
 
     override fun draw(batch: Batch, x: Float, y: Float, width: Float, height: Float) {
-        for (position in -600..600 step 10) {
+        for (position in POSITION_START..POSITION_END step STEP) {
             sprite.x = position.toFloat()
             sprite.draw(batch)
         }
+    }
+
+    private companion object {
+        const val POSITION_START = -600
+        const val POSITION_END = 600
+        const val STEP = 10
     }
 }

@@ -15,7 +15,7 @@ class DifficultyLevelActor(
     private val rightButton: Button = Button(uiSkin)
     private val leftButton: Button = Button(uiSkin, BUTTON_LEFT_STYLE)
     private val lvlDifficultyLabel = Label(START_DIFFICULTY_LVL_TEXT, uiSkin)
-    private var difficultyLevel: Int = 1
+    private var difficultyLevel: Int = LEVEL_MINIMUM
 
     init {
         initUi()
