@@ -40,6 +40,7 @@ class DifficultyScene(
 
     init {
         initUi()
+        initDifficultyLevelListener()
     }
 
     private fun initUi() {
@@ -51,6 +52,12 @@ class DifficultyScene(
         root.add(difficultyLevelActor).expandX().row()
         root.add(gameStartTextButton).expandX().row()
         addActor(root)
+    }
+
+    private fun initDifficultyLevelListener() {
+        difficultyLevelActor.initListenerDifficultyLevel { difficultyLevel ->
+
+        }
     }
 
     private companion object {
