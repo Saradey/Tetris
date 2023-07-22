@@ -4,6 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Button
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
+import com.goncharov.evgeny.tetris.resources.BUTTON_LEFT_STYLE
 import com.goncharov.evgeny.tetris.resources.START_DIFFICULTY_LVL_TEXT
 
 class DifficultyLevelActor(
@@ -11,7 +12,7 @@ class DifficultyLevelActor(
 ) : Table() {
 
     private val rightButton: Button = Button(uiSkin)
-    private val leftButton: Button = Button(uiSkin)
+    private val leftButton: Button = Button(uiSkin, BUTTON_LEFT_STYLE)
     private val lvlDifficultyLabel = Label(START_DIFFICULTY_LVL_TEXT, uiSkin)
 
     init {
