@@ -13,21 +13,13 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val gdxDependencyModule: Module = module {
-    single {
-        SpriteBatch()
-    }
-    single {
-        AssetManager()
-    }
-    single {
-        ResourceManager(get())
-    }
+    single { SpriteBatch() }
+    single { AssetManager() }
+    single { ResourceManager(get()) }
 }
 
 fun createCoreModule(navigator: Navigator): Module = module {
-    single {
-        navigator
-    }
+    single { navigator }
 }
 
 val repositoriesModule: Module = module {
