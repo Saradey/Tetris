@@ -11,10 +11,7 @@ class DifficultyLevelActor(
 ) : Table() {
 
     private val rightButton: Button = Button(uiSkin)
-    private val leftButton: Button = Button(uiSkin).apply {
-        rotation = 90f
-        isDisabled = false
-    }
+    private val leftButton: Button = Button(uiSkin)
     private val lvlDifficultyLabel = Label(START_DIFFICULTY_LVL_TEXT, uiSkin)
 
     init {
@@ -22,8 +19,12 @@ class DifficultyLevelActor(
     }
 
     private fun initUi() {
-        add(leftButton)
+        add(leftButton).padRight(20f)
         add(lvlDifficultyLabel)
-        add(rightButton)
+        add(rightButton).padLeft(20f)
+    }
+
+    private companion object {
+
     }
 }
