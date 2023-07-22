@@ -3,6 +3,8 @@ package com.goncharov.evgeny.tetris
 import com.badlogic.gdx.Game
 import com.goncharov.evgeny.tetris.navigation.NavigationKey
 import com.goncharov.evgeny.tetris.navigation.Navigator
+import com.goncharov.evgeny.tetris.screens.difficulty.DifficultyScreen
+import com.goncharov.evgeny.tetris.screens.game.GameScreen
 import com.goncharov.evgeny.tetris.screens.start.StartScreen
 import com.goncharov.evgeny.tetris.utils.KoinLogger
 import org.koin.core.context.startKoin
@@ -17,7 +19,11 @@ class CoreApp : Game(), Navigator {
     }
 
     override fun navigation(key: NavigationKey) {
-        //TODO
+        when (key) {
+            NavigationKey.StartScreenKey -> setScreen(StartScreen())
+            NavigationKey.DifficultyScreenKey -> setScreen(DifficultyScreen())
+            NavigationKey.GameScreenKey -> setScreen(GameScreen())
+        }
     }
 
     private fun initKoin() {
