@@ -30,7 +30,6 @@ class StartScene(
 
     private val uiSkin: Skin = resourceManager[UI_ASSET_DESCRIPTOR]
     private val soundClickButton: Sound = resourceManager[SOUND_CLICK_BUTTON_DESCRIPTOR]
-
     private val root = Table()
     private val title = Image(uiSkin, TITLE_UI_PATH)
     private val playButton = ImageTextButton(PLAY_GAME_TEXT, uiSkin)
@@ -44,8 +43,8 @@ class StartScene(
     private fun initUi() {
         root.setFillParent(true)
         root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
-        root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).row()
-        root.add(title).expandX().row()
+        root.add(titleDot).padTop(TOP_MARGIN_TITLE_DOT).padLeft(LEFT_MARGIN_TITLE_DOT).row()
+        root.add(title).padTop(TOP_MARGIN_TITLE).expandX().row()
         playButton.addListenerKtx(::clickPlayButton)
         root.add(playButton).expandX().padTop(PLAY_BUTTON_TOP_PADDING)
         addActor(root)
@@ -73,10 +72,12 @@ class StartScene(
     }
 
     private companion object {
-        const val PLAY_BUTTON_TOP_PADDING = 80f
+        const val PLAY_BUTTON_TOP_PADDING = 46f
         const val LEFT_MARGIN_TITLE_DOT = 84f
         const val ANIMATION_ALPHA_START = 0f
         const val ANIMATION_START_DURATION = 0.3f
-        const val MOVE_TITLE_DOT_POSITION = -20f
+        const val MOVE_TITLE_DOT_POSITION = -16f
+        const val TOP_MARGIN_TITLE_DOT = -156f
+        const val TOP_MARGIN_TITLE = -78f
     }
 }
