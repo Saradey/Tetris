@@ -18,7 +18,7 @@ import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
 import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_PATH
 import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
-import com.goncharov.evgeny.tetris.ui.MainBackground
+import com.goncharov.evgeny.tetris.custom.actors.MainBackground
 import com.goncharov.evgeny.tetris.utils.addListenerKtx
 
 class StartScene(

@@ -1,4 +1,4 @@
-package com.goncharov.evgeny.tetris.ui
+package com.goncharov.evgeny.tetris.custom.actors
 
 import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.Sprite
