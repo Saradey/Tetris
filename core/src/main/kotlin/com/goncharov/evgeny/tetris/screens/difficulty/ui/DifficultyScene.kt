@@ -56,7 +56,7 @@ class DifficultyScene(
 
     private fun initDifficultyLevelListener() {
         difficultyLevelActor.initListenerDifficultyLevel { difficultyLevel ->
-
+            soundClickButton.play()
         }
     }
 
