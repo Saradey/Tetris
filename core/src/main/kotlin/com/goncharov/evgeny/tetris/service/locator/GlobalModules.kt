@@ -3,13 +3,11 @@ package com.goncharov.evgeny.tetris.service.locator
 import com.badlogic.gdx.assets.AssetManager
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.goncharov.evgeny.tetris.navigation.Navigator
-import com.goncharov.evgeny.tetris.repositories.DifficultyRepository
-import com.goncharov.evgeny.tetris.repositories.DifficultyRepositoryImpl
 import com.goncharov.evgeny.tetris.resources.ResourceManager
 import com.goncharov.evgeny.tetris.screens.difficulty.service.locator.difficultyModule
 import com.goncharov.evgeny.tetris.screens.start.service.locator.startModule
+import com.goncharov.evgeny.tetris.service.locator.factorys.createDifficultyRepository
 import org.koin.core.module.Module
-import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val gdxDependencyModule: Module = module {
@@ -23,7 +21,7 @@ fun createCoreModule(navigator: Navigator): Module = module {
 }
 
 val repositoriesModule: Module = module {
-    single { DifficultyRepositoryImpl() } bind DifficultyRepository::class
+    single { createDifficultyRepository() }
 }
 
 val allModules = listOf(
