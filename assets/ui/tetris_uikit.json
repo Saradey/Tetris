@@ -79,12 +79,26 @@ com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
 			a: 1
 		}
 	}
+	ui_arrow_left_focused: {
+		name: ui_arrow_left
+		color: {
+			r: 0
+			g: 0
+			b: 0
+			a: 1
+		}
+	}
 }
 com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
 	default: {
 		up: ui_arrow
 		over: ui_arrow_focused
 		disabled: ui_arrow_disabled
+	}
+	button_left: {
+		up: ui_arrow_left
+		over: ui_arrow_left_focused
+		disabled: ui_arrow_left_disabled
 	}
 }
 com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton$ImageTextButtonStyle: {
