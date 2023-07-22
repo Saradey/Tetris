@@ -21,6 +21,7 @@ class DifficultyLevelActor(
 
     private fun initUi() {
         add(leftButton).padRight(20f)
+        leftButton.isDisabled = true
         add(lvlDifficultyLabel)
         add(rightButton).padLeft(20f)
     }
