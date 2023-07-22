@@ -22,34 +22,34 @@ class DifficultyLevelActor(
     }
 
     private fun initUi() {
-        add(leftButton).padRight(20f)
+        add(leftButton).padRight(INTERNAL_PADDING)
         leftButton.isDisabled = true
         add(lvlDifficultyLabel)
-        add(rightButton).padLeft(20f)
+        add(rightButton).padLeft(INTERNAL_PADDING)
     }
 
     fun initListenerDifficultyLevel(action: (Int) -> Unit) {
         leftButton.addListenerKtx {
-            if (difficultyLevel > 1) {
+            if (difficultyLevel > LEVEL_MINIMUM) {
                 difficultyLevel--
-                if (difficultyLevel < 10) {
+                if (difficultyLevel < LEVEL_MAXIMUM) {
                     rightButton.isDisabled = false
                 }
                 lvlDifficultyLabel.setText(difficultyLevel)
-                if (difficultyLevel == 1) {
+                if (difficultyLevel == LEVEL_MINIMUM) {
                     leftButton.isDisabled = true
                 }
                 action(difficultyLevel)
             }
         }
         rightButton.addListenerKtx {
-            if (difficultyLevel < 10) {
+            if (difficultyLevel < LEVEL_MAXIMUM) {
                 difficultyLevel++
-                if (difficultyLevel == 10) {
+                if (difficultyLevel == LEVEL_MAXIMUM) {
                     rightButton.isDisabled = true
                 }
                 lvlDifficultyLabel.setText(difficultyLevel)
-                if (difficultyLevel > 1) {
+                if (difficultyLevel > LEVEL_MINIMUM) {
                     leftButton.isDisabled = false
                 }
                 action(difficultyLevel)
@@ -58,6 +58,8 @@ class DifficultyLevelActor(
     }
 
     private companion object {
-
+        const val INTERNAL_PADDING = 20f
+        const val LEVEL_MINIMUM = 1
+        const val LEVEL_MAXIMUM = 10
     }
 }
