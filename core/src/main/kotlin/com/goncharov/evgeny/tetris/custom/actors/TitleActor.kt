@@ -23,7 +23,7 @@ class TitleActor(
         add(title)
     }
 
-    fun initActions(endCallback: () -> Unit) {
+    fun initActions(endCallback: (() -> Unit)? = null) {
         title.addAction(
             Actions.sequence(
                 Actions.alpha(START_ALPHA_VALUE),
@@ -38,7 +38,7 @@ class TitleActor(
                     Actions.moveBy(0f, MOVE_Y_POSITION_ANIMATION, ALL_DURATION_ANIMATION)
                 ),
                 Actions.run {
-                    endCallback()
+                    endCallback?.invoke()
                 }
             )
         )
