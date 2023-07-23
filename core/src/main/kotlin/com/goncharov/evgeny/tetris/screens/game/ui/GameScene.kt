@@ -11,7 +11,7 @@ import com.goncharov.evgeny.tetris.custom.actors.GameInfoActor
 import com.goncharov.evgeny.tetris.custom.actors.MainBackgroundDrawable
 import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.resources.BACKGROUND_DRAWABLE_PATH
-import com.goncharov.evgeny.tetris.resources.LEVEL_START_SCORE
+import com.goncharov.evgeny.tetris.resources.LEVEL_START_SCORE_TEXT
 import com.goncharov.evgeny.tetris.resources.LEVEL_TEXT
 import com.goncharov.evgeny.tetris.resources.START_SCORE_TEXT
 import com.goncharov.evgeny.tetris.resources.LINES_TEXT
@@ -31,7 +31,7 @@ class GameScene(
     private val uiSkin: Skin = resourceManager[UI_ASSET_DESCRIPTOR]
     private val root = Table()
     private val backgroundSpawnInfo = Image(uiSkin, RESPAWN_GROUND_DRAWABLE_PATH)
-    private val lvlGameInfo = GameInfoActor(uiSkin, LEVEL_TEXT, LEVEL_START_SCORE)
+    private val lvlGameInfo = GameInfoActor(uiSkin, LEVEL_TEXT, LEVEL_START_SCORE_TEXT)
     private val linesInfo = GameInfoActor(uiSkin, LINES_TEXT, START_SCORE_TEXT)
     private val scoreInfo = GameInfoActor(uiSkin, SCORE_TEXT, START_SCORE_TEXT)
 
@@ -66,7 +66,9 @@ class GameScene(
             .spaceTop(20f)
             .row()
         root.add(topGroup).expandX().expandY().align(Align.topRight).row()
-        root.pad(8f).padTop(26f)
+        val bottomGroup = Table()
+
+        root.pad(8f)
         addActor(root)
     }
 
