@@ -41,6 +41,7 @@ class GameScene(
 
     init {
         initUi()
+        initActions()
     }
 
     private fun initUi() {
@@ -86,6 +87,10 @@ class GameScene(
             .width(backgroundSpawnInfo.width)
         root.pad(8f)
         addActor(root)
+    }
+
+    private fun initActions() {
+        titleActor.initActions()
     }
 
     private companion object {
