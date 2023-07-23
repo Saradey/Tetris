@@ -38,7 +38,16 @@ class GameScene(
         root.setFillParent(true)
         root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_DRAWABLE_PATH)))
         root.add(backgroundSpawnInfo).expandX().align(Align.right).row()
-        root.add(lvlGameInfo).expandX().align(Align.right).width(backgroundSpawnInfo.width).row()
+        root.add(lvlGameInfo)
+            .expandX()
+            .align(Align.right)
+            .width(backgroundSpawnInfo.width)
+            .spaceTop(30f)
+            .row()
         addActor(root)
+    }
+
+    private companion object {
+
     }
 }
