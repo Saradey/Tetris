@@ -23,7 +23,7 @@ class TitleActor(
         add(title)
     }
 
-    fun initActions() {
+    fun initActions(endCallback: () -> Unit) {
         title.addAction(
             Actions.sequence(
                 Actions.alpha(0f),
@@ -31,10 +31,15 @@ class TitleActor(
             )
         )
         titleDot.addAction(
-            Actions.parallel(
-                Actions.alpha(0f),
-                Actions.fadeIn(0.3f),
-                Actions.moveBy(0f, -18f, 0.3f)
+            Actions.sequence(
+                Actions.parallel(
+                    Actions.alpha(0f),
+                    Actions.fadeIn(0.3f),
+                    Actions.moveBy(0f, -18f, 0.3f)
+                ),
+                Actions.run {
+                    endCallback()
+                }
             )
         )
     }

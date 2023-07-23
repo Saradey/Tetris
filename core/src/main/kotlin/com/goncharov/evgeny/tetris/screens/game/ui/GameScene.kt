@@ -1,7 +1,10 @@
 package com.goncharov.evgeny.tetris.screens.game.ui
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.badlogic.gdx.scenes.scene2d.Action
+import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
+import com.badlogic.gdx.scenes.scene2d.actions.Actions
 import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
@@ -38,6 +41,7 @@ class GameScene(
     private val scoreInfo = GameInfoActor(uiSkin, SCORE_TEXT, START_SCORE_TEXT)
     private val gameStateActor = GameStateActor(uiSkin)
     private val titleActor = TitleActor(uiSkin)
+    private val topGroup = Table()
 
     init {
         initUi()
@@ -47,28 +51,31 @@ class GameScene(
     private fun initUi() {
         root.setFillParent(true)
         root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_DRAWABLE_PATH)))
-        val topGroup = Table()
         topGroup
             .add(backgroundSpawnInfo)
             .row()
+        backgroundSpawnInfo.addAction(Actions.alpha(0f))
         topGroup
             .add(lvlGameInfo)
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
             .spaceTop(30f)
             .row()
+        lvlGameInfo.addAction(Actions.alpha(0f))
         topGroup
             .add(linesInfo)
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
             .spaceTop(20f)
             .row()
+        linesInfo.addAction(Actions.alpha(0f))
         topGroup
             .add(scoreInfo)
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
             .spaceTop(20f)
             .row()
+        scoreInfo.addAction(Actions.alpha(0f))
         root
             .add(topGroup)
             .expandX()
@@ -81,6 +88,7 @@ class GameScene(
             .width(backgroundSpawnInfo.width)
             .spaceBottom(30f)
             .row()
+        gameStateActor.addAction(Actions.alpha(0f))
         root
             .add(titleActor)
             .align(Align.bottomRight)
@@ -90,7 +98,27 @@ class GameScene(
     }
 
     private fun initActions() {
-        titleActor.initActions()
+        titleActor.initActions {
+            initSecondActions()
+        }
+    }
+
+    private fun initSecondActions() {
+        initFadeInAction(lvlGameInfo)
+        initFadeInAction(linesInfo)
+        initFadeInAction(scoreInfo)
+        initFadeInAction(gameStateActor)
+    }
+
+    private fun initFadeInAction(actor: Actor, endCall: () -> Unit? = null) {
+        actor.addAction(
+            Actions.sequence(
+                Actions.fadeIn(0.3f),
+                Actions.run {
+
+                }
+            )
+        )
     }
 
     private companion object {
