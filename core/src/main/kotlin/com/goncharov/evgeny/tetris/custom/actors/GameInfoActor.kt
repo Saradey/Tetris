@@ -3,7 +3,6 @@ package com.goncharov.evgeny.tetris.custom.actors
 import com.badlogic.gdx.scenes.scene2d.ui.Label
 import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
-import com.badlogic.gdx.utils.Align
 import com.goncharov.evgeny.tetris.resources.LABEL_SCORE_RESULT_STYLE
 import com.goncharov.evgeny.tetris.resources.LABEL_SCORE_STYLE
 
@@ -21,8 +20,8 @@ class GameInfoActor(
     }
 
     private fun initUi() {
-        add(titleLabel).align(Align.left)
-        add(resultLabel).align(Align.right)
+        add(titleLabel).expandX()
+        add(resultLabel).expandX()
     }
 
     fun setResultText(result: String) {
