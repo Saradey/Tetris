@@ -13,10 +13,11 @@ import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.resources.BACKGROUND_DRAWABLE_PATH
 import com.goncharov.evgeny.tetris.resources.LEVEL_START_SCORE
 import com.goncharov.evgeny.tetris.resources.LEVEL_TEXT
-import com.goncharov.evgeny.tetris.resources.LINES_START_SCORE_TEXT
+import com.goncharov.evgeny.tetris.resources.START_SCORE_TEXT
 import com.goncharov.evgeny.tetris.resources.LINES_TEXT
 import com.goncharov.evgeny.tetris.resources.RESPAWN_GROUND_DRAWABLE_PATH
 import com.goncharov.evgeny.tetris.resources.ResourceManager
+import com.goncharov.evgeny.tetris.resources.SCORE_TEXT
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
 import org.koin.core.component.KoinComponent
 
@@ -31,7 +32,8 @@ class GameScene(
     private val root = Table()
     private val backgroundSpawnInfo = Image(uiSkin, RESPAWN_GROUND_DRAWABLE_PATH)
     private val lvlGameInfo = GameInfoActor(uiSkin, LEVEL_TEXT, LEVEL_START_SCORE)
-    private val linesInfo = GameInfoActor(uiSkin, LINES_TEXT, LINES_START_SCORE_TEXT)
+    private val linesInfo = GameInfoActor(uiSkin, LINES_TEXT, START_SCORE_TEXT)
+    private val scoreInfo = GameInfoActor(uiSkin, SCORE_TEXT, START_SCORE_TEXT)
 
     init {
         initUi()
@@ -41,18 +43,12 @@ class GameScene(
         root.setFillParent(true)
         root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_DRAWABLE_PATH)))
         root.add(backgroundSpawnInfo).expandX().align(Align.right).row()
-        root.add(lvlGameInfo)
-            .expandX()
-            .align(Align.right)
-            .width(backgroundSpawnInfo.width)
-            .spaceTop(30f)
-            .row()
-        root.add(linesInfo)
-            .expandX()
-            .align(Align.right)
-            .width(backgroundSpawnInfo.width)
-            .spaceTop(20f)
-            .row()
+        root.add(lvlGameInfo).expandX().align(Align.right).width(backgroundSpawnInfo.width)
+            .spaceTop(30f).row()
+        root.add(linesInfo).expandX().align(Align.right).width(backgroundSpawnInfo.width)
+            .spaceTop(20f).row()
+        root.add(scoreInfo).expandX().align(Align.right).width(backgroundSpawnInfo.width)
+            .spaceTop(20f).row()
         root.pad(8f)
         addActor(root)
     }
