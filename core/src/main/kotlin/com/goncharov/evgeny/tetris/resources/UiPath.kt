@@ -5,5 +5,7 @@ const val TITLE_DRAWABLE_PATH = "title"
 const val TITLE_SHAPE_DRAWABLE_PATH = "title_shape"
 const val RESPAWN_GROUND_DRAWABLE_PATH = "respawn_ground"
 
-//styles
+// styles
 const val BUTTON_LEFT_STYLE = "button_left"
+const val LABEL_SCORE_STYLE = "score_label"
+const val LABEL_SCORE_RESULT_STYLE = "score_result_label"
