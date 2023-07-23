@@ -45,7 +45,9 @@ class GameScene(
         root.setFillParent(true)
         root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_DRAWABLE_PATH)))
         val topGroup = Table()
-        topGroup.add(backgroundSpawnInfo).row()
+        topGroup
+            .add(backgroundSpawnInfo)
+            .row()
         topGroup
             .add(lvlGameInfo)
             .align(Align.topRight)
@@ -64,11 +66,17 @@ class GameScene(
             .width(backgroundSpawnInfo.width)
             .spaceTop(20f)
             .row()
-        root.add(topGroup).expandX().expandY().align(Align.topRight).row()
+        root
+            .add(topGroup)
+            .expandX()
+            .expandY()
+            .align(Align.topRight)
+            .row()
         root
             .add(gameStateActor)
             .align(Align.bottomRight)
             .width(backgroundSpawnInfo.width)
+            .spaceBottom(30f)
             .row()
         root.pad(8f)
         addActor(root)
