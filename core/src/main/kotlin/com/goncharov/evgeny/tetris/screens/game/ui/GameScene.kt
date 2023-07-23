@@ -71,7 +71,6 @@ class GameScene(
             .width(backgroundSpawnInfo.width)
             .row()
         root.pad(8f)
-        root.debug = true
         addActor(root)
     }
 
