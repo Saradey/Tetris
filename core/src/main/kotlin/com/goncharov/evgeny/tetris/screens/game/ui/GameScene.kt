@@ -9,7 +9,7 @@ import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.goncharov.evgeny.tetris.custom.actors.MainBackgroundDrawable
 import com.goncharov.evgeny.tetris.navigation.Navigator
-import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE_UI_PATH
+import com.goncharov.evgeny.tetris.resources.BACKGROUND_DRAWABLE_PATH
 import com.goncharov.evgeny.tetris.resources.RESPAWN_GROUND_DRAWABLE_PATH
 import com.goncharov.evgeny.tetris.resources.ResourceManager
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
@@ -32,7 +32,7 @@ class GameScene(
 
     private fun initUi() {
         root.setFillParent(true)
-        root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
+        root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_DRAWABLE_PATH)))
         root.align(Align.right)
         root.add(backgroundSpawnInfo).row()
         addActor(root)

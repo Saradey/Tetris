@@ -14,13 +14,13 @@ import com.goncharov.evgeny.tetris.custom.actors.MainBackgroundDrawable
 import com.goncharov.evgeny.tetris.navigation.NavigationKey
 import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.repositories.DifficultyRepository
-import com.goncharov.evgeny.tetris.resources.BACKGROUND_LINE_UI_PATH
+import com.goncharov.evgeny.tetris.resources.BACKGROUND_DRAWABLE_PATH
 import com.goncharov.evgeny.tetris.resources.DIFFICULTY_INFO_TEXT
 import com.goncharov.evgeny.tetris.resources.OK_TEXT
 import com.goncharov.evgeny.tetris.resources.ResourceManager
 import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
-import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_PATH
-import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
+import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_DRAWABLE_PATH
+import com.goncharov.evgeny.tetris.resources.TITLE_DRAWABLE_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
 import com.goncharov.evgeny.tetris.utils.addListenerKtx
 
@@ -35,8 +35,8 @@ class DifficultyScene(
     private val uiSkin: Skin = resourceManager[UI_ASSET_DESCRIPTOR]
     private val soundClickButton: Sound = resourceManager[SOUND_CLICK_BUTTON_DESCRIPTOR]
     private val root = Table()
-    private val titleDot = Image(uiSkin, TITLE_SHAPE_PATH)
-    private val title = Image(uiSkin, TITLE_UI_PATH)
+    private val titleDot = Image(uiSkin, TITLE_SHAPE_DRAWABLE_PATH)
+    private val title = Image(uiSkin, TITLE_DRAWABLE_PATH)
     private val difficultyInfoLabel = Label(DIFFICULTY_INFO_TEXT, uiSkin)
     private val difficultyLevelActor = DifficultyLevelActor(uiSkin)
     private val gameStartTextButton = ImageTextButton(OK_TEXT, uiSkin)
@@ -48,7 +48,7 @@ class DifficultyScene(
 
     private fun initUi() {
         root.setFillParent(true)
-        root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
+        root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_DRAWABLE_PATH)))
         root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).padBottom(MOVE_TITLE_DOT_POSITION).row()
         root.add(title).expandX().row()
         root.add(difficultyInfoLabel).padTop(PADDING_TOP_INFO_LABEL).expandX().row()
