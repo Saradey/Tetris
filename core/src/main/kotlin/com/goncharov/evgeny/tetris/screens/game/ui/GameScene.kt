@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.viewport.Viewport
 import com.goncharov.evgeny.tetris.custom.actors.GameInfoActor
 import com.goncharov.evgeny.tetris.custom.actors.GameStateActor
 import com.goncharov.evgeny.tetris.custom.actors.MainBackgroundDrawable
+import com.goncharov.evgeny.tetris.custom.actors.TitleActor
 import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.resources.BACKGROUND_DRAWABLE_PATH
 import com.goncharov.evgeny.tetris.resources.LEVEL_START_SCORE_TEXT
@@ -36,6 +37,7 @@ class GameScene(
     private val linesInfo = GameInfoActor(uiSkin, LINES_TEXT, START_SCORE_TEXT)
     private val scoreInfo = GameInfoActor(uiSkin, SCORE_TEXT, START_SCORE_TEXT)
     private val gameStateActor = GameStateActor(uiSkin)
+    private val titleActor = TitleActor(uiSkin)
 
     init {
         initUi()
@@ -78,6 +80,10 @@ class GameScene(
             .width(backgroundSpawnInfo.width)
             .spaceBottom(30f)
             .row()
+        root
+            .add(titleActor)
+            .align(Align.bottomRight)
+            .width(backgroundSpawnInfo.width)
         root.pad(8f)
         addActor(root)
     }
