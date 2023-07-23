@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin
 import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.goncharov.evgeny.tetris.custom.actors.DifficultyLevelActor
-import com.goncharov.evgeny.tetris.custom.actors.MainBackground
+import com.goncharov.evgeny.tetris.custom.actors.MainBackgroundDrawable
 import com.goncharov.evgeny.tetris.navigation.NavigationKey
 import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.repositories.DifficultyRepository
@@ -48,7 +48,7 @@ class DifficultyScene(
 
     private fun initUi() {
         root.setFillParent(true)
-        root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
+        root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
         root.add(titleDot).padLeft(LEFT_MARGIN_TITLE_DOT).padBottom(MOVE_TITLE_DOT_POSITION).row()
         root.add(title).expandX().row()
         root.add(difficultyInfoLabel).padTop(PADDING_TOP_INFO_LABEL).expandX().row()

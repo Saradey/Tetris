@@ -18,7 +18,7 @@ import com.goncharov.evgeny.tetris.resources.SOUND_CLICK_BUTTON_DESCRIPTOR
 import com.goncharov.evgeny.tetris.resources.TITLE_SHAPE_PATH
 import com.goncharov.evgeny.tetris.resources.TITLE_UI_PATH
 import com.goncharov.evgeny.tetris.resources.UI_ASSET_DESCRIPTOR
-import com.goncharov.evgeny.tetris.custom.actors.MainBackground
+import com.goncharov.evgeny.tetris.custom.actors.MainBackgroundDrawable
 import com.goncharov.evgeny.tetris.utils.addListenerKtx
 
 class StartScene(
@@ -42,7 +42,7 @@ class StartScene(
 
     private fun initUi() {
         root.setFillParent(true)
-        root.background(MainBackground(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
+        root.background(MainBackgroundDrawable(uiSkin.getSprite(BACKGROUND_LINE_UI_PATH)))
         root.add(titleDot).padTop(TOP_MARGIN_TITLE_DOT).padLeft(LEFT_MARGIN_TITLE_DOT).row()
         root.add(title).padTop(TOP_MARGIN_TITLE).expandX().row()
         playButton.addListenerKtx(::clickPlayButton)

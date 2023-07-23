@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Batch
 import com.badlogic.gdx.graphics.g2d.Sprite
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable
 
-class MainBackground(
+class MainBackgroundDrawable(
     private val sprite: Sprite
 ) : SpriteDrawable(sprite) {
 
