@@ -107,15 +107,17 @@ class GameScene(
         initFadeInAction(lvlGameInfo)
         initFadeInAction(linesInfo)
         initFadeInAction(scoreInfo)
-        initFadeInAction(gameStateActor)
+        initFadeInAction(gameStateActor) {
+            initFadeInAction(backgroundSpawnInfo)
+        }
     }
 
-    private fun initFadeInAction(actor: Actor, endCall: () -> Unit? = null) {
+    private fun initFadeInAction(actor: Actor, endCall: (() -> Unit)? = null) {
         actor.addAction(
             Actions.sequence(
                 Actions.fadeIn(0.3f),
                 Actions.run {
-
+                    endCall?.invoke()
                 }
             )
         )
