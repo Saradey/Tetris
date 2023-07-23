@@ -19,28 +19,36 @@ class TitleActor(
     }
 
     private fun initUi() {
-        add(titleDot).padLeft(84f).row()
+        add(titleDot).padLeft(MARGIN_LEFT_TITLE_DOT).row()
         add(title)
     }
 
     fun initActions(endCallback: () -> Unit) {
         title.addAction(
             Actions.sequence(
-                Actions.alpha(0f),
-                Actions.fadeIn(0.3f)
+                Actions.alpha(START_ALPHA_VALUE),
+                Actions.fadeIn(ALL_DURATION_ANIMATION)
             )
         )
         titleDot.addAction(
             Actions.sequence(
                 Actions.parallel(
-                    Actions.alpha(0f),
-                    Actions.fadeIn(0.3f),
-                    Actions.moveBy(0f, -18f, 0.3f)
+                    Actions.alpha(START_ALPHA_VALUE),
+                    Actions.fadeIn(ALL_DURATION_ANIMATION),
+                    Actions.moveBy(0f, MOVE_Y_POSITION_ANIMATION, ALL_DURATION_ANIMATION)
                 ),
                 Actions.run {
                     endCallback()
                 }
             )
         )
+    }
+
+    private companion object {
+
+        const val ALL_DURATION_ANIMATION = 0.3f
+        const val START_ALPHA_VALUE = 0f
+        const val MOVE_Y_POSITION_ANIMATION = -18f
+        const val MARGIN_LEFT_TITLE_DOT = 84f
     }
 }
