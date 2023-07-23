@@ -1,7 +1,6 @@
 package com.goncharov.evgeny.tetris.screens.game.ui
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.scenes.scene2d.Action
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.scenes.scene2d.actions.Actions
@@ -54,28 +53,28 @@ class GameScene(
         topGroup
             .add(backgroundSpawnInfo)
             .row()
-        backgroundSpawnInfo.addAction(Actions.alpha(0f))
+        backgroundSpawnInfo.addAction(Actions.alpha(START_ALPHA_VALUE))
         topGroup
             .add(lvlGameInfo)
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
-            .spaceTop(30f)
+            .spaceTop(MAIN_MARGIN)
             .row()
-        lvlGameInfo.addAction(Actions.alpha(0f))
+        lvlGameInfo.addAction(Actions.alpha(START_ALPHA_VALUE))
         topGroup
             .add(linesInfo)
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
-            .spaceTop(20f)
+            .spaceTop(SECOND_MARGIN)
             .row()
-        linesInfo.addAction(Actions.alpha(0f))
+        linesInfo.addAction(Actions.alpha(START_ALPHA_VALUE))
         topGroup
             .add(scoreInfo)
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
-            .spaceTop(20f)
+            .spaceTop(SECOND_MARGIN)
             .row()
-        scoreInfo.addAction(Actions.alpha(0f))
+        scoreInfo.addAction(Actions.alpha(START_ALPHA_VALUE))
         root
             .add(topGroup)
             .expandX()
@@ -86,14 +85,14 @@ class GameScene(
             .add(gameStateActor)
             .align(Align.bottomRight)
             .width(backgroundSpawnInfo.width)
-            .spaceBottom(30f)
+            .spaceBottom(MAIN_MARGIN)
             .row()
-        gameStateActor.addAction(Actions.alpha(0f))
+        gameStateActor.addAction(Actions.alpha(START_ALPHA_VALUE))
         root
             .add(titleActor)
             .align(Align.bottomRight)
             .width(backgroundSpawnInfo.width)
-        root.pad(8f)
+        root.pad(PADDING_ROOT)
         addActor(root)
     }
 
@@ -115,7 +114,7 @@ class GameScene(
     private fun initFadeInAction(actor: Actor, endCall: (() -> Unit)? = null) {
         actor.addAction(
             Actions.sequence(
-                Actions.fadeIn(0.3f),
+                Actions.fadeIn(ALL_ANIMATION_DURATION),
                 Actions.run {
                     endCall?.invoke()
                 }
@@ -125,5 +124,10 @@ class GameScene(
 
     private companion object {
 
+        const val START_ALPHA_VALUE = 0f
+        const val ALL_ANIMATION_DURATION = 0.3f
+        const val MAIN_MARGIN = 30f
+        const val PADDING_ROOT = 8f
+        const val SECOND_MARGIN = 20f
     }
 }
