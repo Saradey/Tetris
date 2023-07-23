@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table
 import com.badlogic.gdx.utils.Align
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.goncharov.evgeny.tetris.custom.actors.GameInfoActor
+import com.goncharov.evgeny.tetris.custom.actors.GameStateActor
 import com.goncharov.evgeny.tetris.custom.actors.MainBackgroundDrawable
 import com.goncharov.evgeny.tetris.navigation.Navigator
 import com.goncharov.evgeny.tetris.resources.BACKGROUND_DRAWABLE_PATH
@@ -34,6 +35,7 @@ class GameScene(
     private val lvlGameInfo = GameInfoActor(uiSkin, LEVEL_TEXT, LEVEL_START_SCORE_TEXT)
     private val linesInfo = GameInfoActor(uiSkin, LINES_TEXT, START_SCORE_TEXT)
     private val scoreInfo = GameInfoActor(uiSkin, SCORE_TEXT, START_SCORE_TEXT)
+    private val gameStateActor = GameStateActor(uiSkin)
 
     init {
         initUi()
@@ -46,29 +48,30 @@ class GameScene(
         topGroup.add(backgroundSpawnInfo).row()
         topGroup
             .add(lvlGameInfo)
-            .expandX()
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
             .spaceTop(30f)
             .row()
         topGroup
             .add(linesInfo)
-            .expandX()
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
             .spaceTop(20f)
             .row()
         topGroup
             .add(scoreInfo)
-            .expandX()
             .align(Align.topRight)
             .width(backgroundSpawnInfo.width)
             .spaceTop(20f)
             .row()
         root.add(topGroup).expandX().expandY().align(Align.topRight).row()
-        val bottomGroup = Table()
-
+        root
+            .add(gameStateActor)
+            .align(Align.bottomRight)
+            .width(backgroundSpawnInfo.width)
+            .row()
         root.pad(8f)
+        root.debug = true
         addActor(root)
     }
 
