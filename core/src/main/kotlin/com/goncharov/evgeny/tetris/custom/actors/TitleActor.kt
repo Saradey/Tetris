@@ -19,7 +19,8 @@ class TitleActor(
     }
 
     private fun initUi() {
-        add(titleDot).padLeft(MARGIN_LEFT_TITLE_DOT).row()
+        add(titleDot).padLeft(MARGIN_LEFT_TITLE_DOT)
+            .row()
         add(title)
     }
 

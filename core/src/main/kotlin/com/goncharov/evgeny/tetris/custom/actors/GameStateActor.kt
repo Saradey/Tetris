@@ -19,9 +19,13 @@ class GameStateActor(
     }
 
     private fun initUi() {
-        add(quitButton).growX().align(Align.left).spaceBottom(20f).row()
+        add(quitButton).growX()
+            .align(Align.left)
+            .spaceBottom(20f)
+            .row()
         quitButton.align(Align.left)
-        add(pauseButton).growX().align(Align.left)
+        add(pauseButton).growX()
+            .align(Align.left)
         pauseButton.align(Align.left)
     }
 }
